@@ -2,7 +2,7 @@ package polyGame;
 
 public class Main {
 	public static void main(String[] args) {
-		GameManager gameManager = new GameManager();
+		GameManager game = new GameManager();
 		while(true) {
 			break;
 		}
