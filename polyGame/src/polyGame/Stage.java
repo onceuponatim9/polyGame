@@ -1,5 +1,10 @@
 package polyGame;
 
-public class Stage {
+public abstract class Stage {
+	public Stage() {
+		
+	}
+	
+	public abstract boolean update();
 
 }
