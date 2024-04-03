@@ -12,7 +12,7 @@ public class GameManager {
 	Map<String, Stage> stageList = new HashMap<String, Stage>();
 	
 	static String nextStage = "";
-	static String curStage = "";
+	String curStage = "";
 	
 	static boolean isRun = true;
 	
