@@ -3,8 +3,8 @@ package polyGame;
 public class Main {
 	public static void main(String[] args) {
 		GameManager gm = new GameManager();
-		UnitManager um = new UnitManager();
-		Game game = new Game();
+		Battle battle = new Battle();
+		StageStart game = new StageStart();
 		
 		System.out.println("==== TEXT RPG ====");
 		
@@ -16,11 +16,13 @@ public class Main {
 			}
 		}
 		
+		// 게임 준비
+		battle.init();
+		
 		// 게임 진행
 		while(true) {
-			um.makeMonster(3);
-			gm.changeStage();
-			if(!gm.isRun)
+			boolean isRun = gm.changeStage();
+			if(!isRun)
 				break;
 		}
 		
