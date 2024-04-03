@@ -10,12 +10,14 @@ public class UnitManager {
 	Vector<Unit> monsterList = new Vector<>();
 	
 	String path = "polyGame.";
-	String[] monsters = {"UnitWolf", "UnitBat", "UnitOrc"};
+	String[] monsters = {"UnitWolf", "UnitGhost", "UnitBear", "UnitLion", "UnitDragon"};
 	
 	public UnitManager() {
 		playerList.add(new Player("name1", 900, 50));
-		playerList.add(new Player("name2", 800, 70));
-		playerList.add(new Player("name3", 600, 90));
+		playerList.add(new Player("name2", 800, 60));
+		playerList.add(new Player("name3", 700, 70));
+		playerList.add(new Player("name4", 600, 80));
+		playerList.add(new Player("name5", 500, 90));
 	}
 	
 	public Vector<Player> getPlayerList() {
