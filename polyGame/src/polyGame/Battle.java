@@ -12,18 +12,12 @@ public class Battle extends Stage {
 	boolean isBattle = false;
 	boolean isTurn = true;
 	
-//	public Battle() {
-////		GameManager gm = new GameManager();
-////		UserManager um = new UnitManager();
-//		um.monsterList.clear();
-//		um.makeMonster();
-//		playerList = um.getPlayerList();
-//		monsterList = um.getMonsterList();
-//	}
-	
-	public void init() {
+	public Battle() {
 		um.monsterList.clear();
 		um.makeMonster();
+	}
+	
+	public void init() {
 		playerList = null;
 		monsterList = null;
 		playerList = um.playerList;
