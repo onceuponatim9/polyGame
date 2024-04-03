@@ -1,7 +1,5 @@
 package polyGame;
 
-import java.util.Vector;
-
 public abstract class Unit {
 	public String name;
 	public int maxhp;
@@ -35,8 +33,9 @@ public abstract class Unit {
 		System.out.println("[" + name + "] [" + curhp + "/" + maxhp + "] [" + power + "]");
 	}
 
-	public void init(int hp, int power) {
+	public void init(String name, int hp, int power) {
 		// TODO Auto-generated method stub
+		this.name = name;
 		this.maxhp = hp;
 		this.curhp = hp;
 		this.power = power;
