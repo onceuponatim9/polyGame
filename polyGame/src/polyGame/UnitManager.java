@@ -37,16 +37,15 @@ public class UnitManager {
 				
 				// 새로운 몬스터 생성
 				Unit temp = (Unit) obj;
-				String name = monsters[i];
+				String name = temp.name;
 				temp.init(name, hp, power);
-//				temp.init(hp, power);
 				monsterList.add(temp);
 				
 			} catch (Exception e) {
 				System.out.println("몬스터 생성 실패");
 			}
 			// 잘 만들어졌는지 검사
-			monsterList.get(i).printData();
+			//monsterList.get(i).printData();
 		}
 	}
 
