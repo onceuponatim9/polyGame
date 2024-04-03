@@ -12,7 +12,7 @@ public class GameManager {
 	Map<String, Stage> stageList = new HashMap<String, Stage>();
 	
 	static String nextStage = "";
-	String curStage = "";
+	static String curStage = "";
 	
 	static boolean isRun = true;
 	
@@ -27,8 +27,8 @@ public class GameManager {
 		System.out.println("curStage : " + curStage);
 		System.out.println("nextStage : " + nextStage);
 		
-		if (curStage.equals(nextStage))
-			return true;
+//		if (curStage.equals(nextStage))
+//			return true;
 		
 		curStage = nextStage;
 		Stage stage = stageList.get(curStage);
