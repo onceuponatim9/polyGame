@@ -7,4 +7,9 @@ public abstract class Stage {
 	
 	public abstract boolean update();
 
+	public void init() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
