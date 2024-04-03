@@ -6,42 +6,50 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class GameManager {
-	Scanner scan = new Scanner(System.in);
-	Random ran = new Random();
+	static Scanner scan = new Scanner(System.in);
+	static Random ran = new Random();
 	
 	Map<String, Stage> stageList = new HashMap<String, Stage>();
 	
-	String nextStage = "";
+	static String nextStage = "";
 	String curStage = "";
 	
-	public boolean isRun = true;
+	static boolean isRun = true;
 	
 	public GameManager() {
-		stageList.put("Lobby", new Lobby());
-		stageList.put("Stage1", new Stage1());
-		stageList.put("Stage2", new Stage2());
-		nextStage = "Lobby";
+		stageList.put("StageStart", new StageStart());
+		stageList.put("BATTLE", new Battle());
+		stageList.put("LOBBY", new Lobby());
+		nextStage = "StageStart";
 	}
 	
-	public void changeStage() {
+	public boolean changeStage() {
 		System.out.println("curStage : " + curStage);
 		System.out.println("nextStage : " + nextStage);
 		
+		if (curStage.equals(nextStage))
+			return true;
+		
 		curStage = nextStage;
 		Stage stage = stageList.get(curStage);
+		stage.init();
 		
 		while(isRun) {
-			Battle battle = new Battle();
-			boolean isUpdate = battle.update(); // 여기가 문제
+			boolean isUpdate = stage.update();
 			if (!isUpdate)
 				break;
 		}
 		
+		if(!isRun)
+			return false;
+		
 		if (nextStage.equals(""))
-			isRun = false;
+			return false;
+		else
+			return true;
 	}
 	
-	public int inputNumber() {
+	public static int inputNumber() {
 		int number = -1;
 		try {
 			String input = scan.next();
